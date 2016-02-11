@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homepage_bg">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="107dp"
+        android:text="Counter"
+        android:textSize="50dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/button2"
+        android:text="Start" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtStringLength"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="27dp"
+        android:text="Stop" />
+
+    <TextView
+        android:id="@+id/fsr_value4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Sensor4" />
+
+    <TextView
+        android:id="@+id/fsr_value3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/fsr_value4"
+        android:layout_toStartOf="@+id/fsr_value4"
+        android:text="Sensor3" />
+
+    <TextView
+        android:id="@+id/fsr_value2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/fsr_value3"
+        android:layout_toStartOf="@+id/fsr_value3"
+        android:text="Sensor2" />
+
+    <TextView
+        android:id="@+id/fsr_value1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/fsr_value2"
+        android:layout_toStartOf="@+id/fsr_value2"
+        android:text="Sensor1" />
+
+    <TextView
+        android:id="@+id/txtString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fsr_value4"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="New Text" />
+
+    <TextView
+        android:id="@+id/txtStringLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtString"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="New Text" />
+
+    <TextView
+        android:id="@+id/twinstruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:textSize="20dp"
+        android:text="Instruction" />
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView1" />
+
+
+    <TextView
+        android:id="@+id/tvtest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/twinstruction"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp" />
+
+</RelativeLayout>
