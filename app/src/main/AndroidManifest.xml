@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="HomePage" />
+        <activity android:name=".HomePage" />
         <activity android:name="ProgramSelect" />
         <activity android:name="ViewRecord" />
         <activity android:name="NormalMode" />
