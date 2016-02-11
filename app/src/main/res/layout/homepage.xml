@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/homepage_bg">
 
 
     <ImageButton
         android:id="@+id/imageButton1"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:scaleType="fitXY"
-        android:src="@drawable/training_program" />
+        android:background="@drawable/training_program"
+        android:layout_marginTop="135dp"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:scaleType="fitXY"
-        android:src="@drawable/view_my_record" />
+        android:background="@drawable/view_my_record"
+        android:layout_below="@+id/imageButton1"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_alignStart="@+id/imageButton1"
+        android:layout_marginTop="35dp" />
 
     <TextView
         android:id="@+id/name"
@@ -39,12 +47,20 @@
         android:layout_weight="1"
         android:text="XXX hospital" />
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton2"
+        android:layout_marginTop="35dp">
+
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:stretchColumns="0,1,2,3">
+            android:stretchColumns="0,1,2,3"
+            android:id="@+id/tableLayout">
 
         <TableRow>
 
@@ -55,7 +71,7 @@
                 android:src="@drawable/ic_account" />
 
             <TextView
-                android:id="@+id/log"
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Login" />
@@ -73,5 +89,5 @@
                 android:text="Setting" />
         </TableRow>
     </TableLayout>
-
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
