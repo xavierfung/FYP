@@ -19,6 +19,8 @@ public class HomePageABC extends Activity {
     private TextView twplace;
     private ImageView image_setting;
     private TextView tw_setting;
+    private ImageView image_login;
+    private TextView tw_login;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class HomePageABC extends Activity {
         twplace = (TextView) findViewById(R.id.place);
         image_setting = (ImageView) findViewById(R.id.ic_settings);
         tw_setting = (TextView) findViewById(R.id.setting);
+        image_login = (ImageButton) findViewById(R.id.ic_account);
+        tw_login = (TextView) findViewById(R.id.login);
 
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +64,22 @@ public class HomePageABC extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomePageABC.this, BTConnetion.class);
+                startActivity(intent);
+            }
+        });
+
+        image_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tw_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

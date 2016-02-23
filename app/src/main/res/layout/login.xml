@@ -6,20 +6,12 @@
     android:background="@drawable/login_bg">
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_arrow_back" />
-
-    <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
         android:scaleType="fitXY"
-        android:src="@drawable/login_button"
+        android:background="@drawable/login_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="183dp" />
@@ -29,32 +21,31 @@
         android:layout_height="wrap_content"
         android:text="Username"
         android:id="@+id/textView"
-        android:layout_above="@+id/imageButton1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="75dp" />
+        android:layout_alignTop="@+id/username"
+        android:layout_toLeftOf="@+id/username"
+        android:layout_toStartOf="@+id/username"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
         android:id="@+id/textView2"
-        android:layout_above="@+id/imageButton1"
+        android:layout_alignTop="@+id/editText2"
         android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="30dp" />
+        android:layout_alignStart="@+id/textView" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:maxLength="10"
+        android:ems="10"
         android:inputType="text"
-        android:layout_alignTop="@+id/textView"
-        android:layout_alignLeft="@+id/imageButton1"
-        android:layout_alignStart="@+id/imageButton1" />
+        android:layout_above="@+id/editText2"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -62,8 +53,9 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/editText2"
-        android:layout_below="@+id/username"
-        android:layout_alignLeft="@+id/username"
-        android:layout_alignStart="@+id/username" />
+        android:layout_above="@+id/imageButton1"
+        android:layout_alignLeft="@+id/imageButton1"
+        android:layout_alignStart="@+id/imageButton1"
+        android:layout_marginBottom="48dp" />
 
 </RelativeLayout>
