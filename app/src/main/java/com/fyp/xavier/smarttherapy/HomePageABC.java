@@ -33,7 +33,7 @@ public class HomePageABC extends Activity {
         twplace = (TextView) findViewById(R.id.place);
         image_setting = (ImageView) findViewById(R.id.ic_settings);
         tw_setting = (TextView) findViewById(R.id.setting);
-        image_login = (ImageButton) findViewById(R.id.ic_account);
+        image_login = (ImageView) findViewById(R.id.ic_account);
         tw_login = (TextView) findViewById(R.id.login);
 
         iButton1.setOnClickListener(new View.OnClickListener() {
