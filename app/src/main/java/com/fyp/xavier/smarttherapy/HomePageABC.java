@@ -106,16 +106,14 @@ public class HomePageABC extends Activity {
         image_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
-                startActivity(intent);
+                logoutUser();
             }
         });
 
         tw_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
-                startActivity(intent);
+                logoutUser();
             }
         });
 
