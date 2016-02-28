@@ -43,9 +43,9 @@
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
-        android:ems="30"
+        android:ems="10"
         android:inputType="text"
-        android:maxLength="30" />
+        android:maxLength="10" />
 
     <EditText
         android:id="@+id/password"
