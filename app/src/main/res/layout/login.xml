@@ -2,72 +2,72 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/login_bg">
+    android:background="@drawable/login_bg"
+    android:orientation="vertical">
 
     <ImageButton
         android:id="@+id/btn_login"
         android:layout_width="150dp"
         android:layout_height="65dp"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="fitXY"
-        android:background="@drawable/login_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="183dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="183dp"
+        android:background="@drawable/login_button"
+        android:scaleType="fitXY" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:id="@+id/textView"
         android:layout_alignTop="@+id/username"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:layout_toLeftOf="@+id/username"
         android:layout_toStartOf="@+id/username"
-        android:layout_marginRight="26dp"
-        android:layout_marginEnd="26dp" />
+        android:text="Username" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:id="@+id/textView2"
-        android:layout_alignTop="@+id/password"
         android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignTop="@+id/password"
+        android:text="Password" />
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:maxLength="10"
-        android:ems="10"
-        android:inputType="text"
         android:layout_above="@+id/password"
         android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password" />
+        android:layout_alignStart="@+id/password"
+        android:ems="30"
+        android:inputType="text"
+        android:maxLength="30" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password"
         android:layout_above="@+id/btn_login"
         android:layout_alignLeft="@+id/btn_login"
         android:layout_alignStart="@+id/btn_login"
-        android:layout_marginBottom="48dp" />
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/btn_register"
-        android:layout_alignTop="@+id/btn_login"
-        android:layout_marginTop="97dp"
-        android:layout_alignRight="@+id/btn_login"
         android:layout_alignEnd="@+id/btn_login"
         android:layout_alignLeft="@+id/btn_login"
-        android:layout_alignStart="@+id/btn_login" />
+        android:layout_alignRight="@+id/btn_login"
+        android:layout_alignStart="@+id/btn_login"
+        android:layout_alignTop="@+id/btn_login"
+        android:layout_marginTop="97dp"
+        android:text="Register" />
 
 </RelativeLayout>

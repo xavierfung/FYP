@@ -8,6 +8,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fyp.xavier.smarttherapy.helper.SQLiteHandler;
+import com.fyp.xavier.smarttherapy.helper.SessionManager;
+
+import java.util.HashMap;
+
 /**
  * Created by Xavier on 16/1/2016.
  */
@@ -21,6 +26,8 @@ public class HomePageABC extends Activity {
     private TextView tw_setting;
     private ImageView image_login;
     private TextView tw_login;
+    private SQLiteHandler db;
+    private SessionManager session;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,34 @@ public class HomePageABC extends Activity {
         image_login = (ImageView) findViewById(R.id.ic_account);
         tw_login = (TextView) findViewById(R.id.login);
 
+        // SqLite database handler
+        db = new SQLiteHandler(getApplicationContext());
+
+        // session manager
+        session = new SessionManager(getApplicationContext());
+
+        if (!session.isLoggedIn()) {
+            logoutUser();
+        }
+
+        // Fetching user details from SQLite
+        HashMap<String, String> user = db.getUserDetails();
+
+        String name = user.get("name");
+        String email = user.get("email");
+
+        // Displaying the user details on the screen
+        twname.setText(name);
+        twplace.setText(email);
+
+        // Logout button click event
+        /**  btnLogout.setOnClickListener(new View.OnClickListener() {
+
+        @Override public void onClick(View v) {
+        logoutUser();
+        }
+        });
+         **/
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,5 +120,16 @@ public class HomePageABC extends Activity {
         });
 
 
+    }
+
+    private void logoutUser() {
+        session.setLogin(false);
+
+        db.deleteUsers();
+
+        // Launching the login activity
+        Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

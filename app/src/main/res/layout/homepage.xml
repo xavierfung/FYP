@@ -2,65 +2,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/homepage_bg">
+    android:orientation="vertical">
 
 
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="300dp"
         android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
         android:layout_weight="1"
-        android:scaleType="fitXY"
         android:background="@drawable/training_program"
-        android:layout_marginTop="135dp"
-        android:layout_below="@+id/name"
-        android:layout_centerHorizontal="true" />
+        android:scaleType="fitXY" />
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="300dp"
         android:layout_height="170dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        android:scaleType="fitXY"
-        android:background="@drawable/view_my_record"
-        android:layout_below="@+id/imageButton1"
         android:layout_alignLeft="@+id/imageButton1"
         android:layout_alignStart="@+id/imageButton1"
-        android:layout_marginTop="35dp" />
+        android:layout_below="@+id/imageButton1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:layout_weight="1"
+        android:background="@drawable/view_my_record"
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton2"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
         android:layout_weight="1"
         android:text="Chan Tai Man" />
 
     <TextView
         android:id="@+id/place"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton2"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
         android:layout_weight="1"
         android:text="XXX hospital" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageButton2"
-        android:layout_marginTop="35dp">
+        android:layout_marginTop="100dp">
 
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
-            android:stretchColumns="0,1,2,3"
-            android:id="@+id/tableLayout">
+            android:layout_marginTop="35dp"
+            android:orientation="horizontal"
+            android:stretchColumns="0,1,2,3">
 
         <TableRow>
 
