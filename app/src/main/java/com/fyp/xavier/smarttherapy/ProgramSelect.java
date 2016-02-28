@@ -31,18 +31,14 @@ public class ProgramSelect extends Activity {
         iButton1 = (ImageButton) findViewById(R.id.imageButton1);
         iButton2 = (ImageButton) findViewById(R.id.imageButton2);
         twname = (TextView) findViewById(R.id.name);
-        twname = (TextView) findViewById(R.id.place);
+        twplace = (TextView) findViewById(R.id.place);
 
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
         // session manager
         session = new SessionManager(getApplicationContext());
-/**
- if (!session.isLoggedIn()) {
- logoutUser();
- }
- **/
+
         // Fetching user details from SQLite
         HashMap<String, String> user = db.getUserDetails();
 
