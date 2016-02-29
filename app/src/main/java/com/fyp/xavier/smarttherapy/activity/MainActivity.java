@@ -1,4 +1,4 @@
-package com.fyp.xavier.smarttherapy;
+package com.fyp.xavier.smarttherapy.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,16 +8,16 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fyp.xavier.smarttherapy.helper.BTConnetion;
+import com.fyp.xavier.smarttherapy.ProgramSelect;
+import com.fyp.xavier.smarttherapy.R;
+import com.fyp.xavier.smarttherapy.ViewRecord;
 import com.fyp.xavier.smarttherapy.helper.SQLiteHandler;
 import com.fyp.xavier.smarttherapy.helper.SessionManager;
 
 import java.util.HashMap;
 
-/**
- * Created by Xavier on 16/1/2016.
- */
-public class HomePageABC extends Activity {
-
+public class MainActivity extends Activity {
     private ImageButton iButton1;
     private ImageButton iButton2;
     private TextView twname;
@@ -33,7 +33,7 @@ public class HomePageABC extends Activity {
     public void onCreate(Bundle savedInstanceState) {
     /**/
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.activity_main);
         iButton1 = (ImageButton) findViewById(R.id.imageButton1);
         iButton2 = (ImageButton) findViewById(R.id.imageButton2);
         twname = (TextView) findViewById(R.id.name);

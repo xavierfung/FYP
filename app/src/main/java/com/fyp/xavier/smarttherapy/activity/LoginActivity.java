@@ -1,4 +1,4 @@
-package com.fyp.xavier.smarttherapy;
+package com.fyp.xavier.smarttherapy.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -11,10 +11,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.android.volley.Request;
+import com.android.volley.Request.Method;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.fyp.xavier.smarttherapy.R;
 import com.fyp.xavier.smarttherapy.app.AppConfig;
 import com.fyp.xavier.smarttherapy.app.AppController;
 import com.fyp.xavier.smarttherapy.helper.SQLiteHandler;
@@ -46,6 +47,7 @@ public class LoginActivity extends Activity {
     /**/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
         inputUserName = (EditText) findViewById(R.id.username);
         inputPassword = (EditText) findViewById(R.id.password);
         btnLogin = (ImageButton) findViewById(R.id.btn_login);
@@ -64,7 +66,7 @@ public class LoginActivity extends Activity {
         // Check if user is already logged in or not
         if (session.isLoggedIn()) {
             // User is already logged in. Take him to main activity
-            Intent intent = new Intent(LoginActivity.this, HomePageABC.class);
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -112,7 +114,7 @@ public class LoginActivity extends Activity {
         pDialog.setMessage("Logging in ...");
         showDialog();
 
-        StringRequest strReq = new StringRequest(Request.Method.POST,
+        StringRequest strReq = new StringRequest(Method.POST,
                 AppConfig.URL_LOGIN, new Response.Listener<String>() {
 
             @Override

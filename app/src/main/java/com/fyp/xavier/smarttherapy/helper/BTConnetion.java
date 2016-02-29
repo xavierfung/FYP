@@ -1,4 +1,4 @@
-package com.fyp.xavier.smarttherapy;
+package com.fyp.xavier.smarttherapy.helper;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -13,6 +13,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fyp.xavier.smarttherapy.NormalMode;
+import com.fyp.xavier.smarttherapy.R;
+
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -22,6 +25,7 @@ import java.util.Set;
 public class BTConnetion extends Activity {
 
 
+    public static String EXTRA_ADDRESS = "device_address";
     //MAC Address: 98:D3:31:30:7E:EE
 //widgets
     Button btnPaired;
@@ -29,7 +33,23 @@ public class BTConnetion extends Activity {
     //Bluetooth
     private BluetoothAdapter myBluetooth = null;
     private Set<BluetoothDevice> pairedDevices;
-    public static String EXTRA_ADDRESS = "device_address";
+    private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener() {
+        public void onItemClick(AdapterView<?> av, View v, int arg2, long arg3) {
+            // Get the device MAC address, the last 17 chars in the View
+            String info = ((TextView) v).getText().toString();
+            String address = info.substring(info.length() - 17);
+
+            // Make an intent to start next activity.
+            Intent i = new Intent(BTConnetion.this, NormalMode.class);
+
+            //Change the activity.
+            i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
+            startActivity(i);
+
+        }
+
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,23 +101,5 @@ public class BTConnetion extends Activity {
         devicelist.setOnItemClickListener(myListClickListener); //Method called when the device from the list is clicked
 
     }
-
-    private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener() {
-        public void onItemClick(AdapterView<?> av, View v, int arg2, long arg3) {
-            // Get the device MAC address, the last 17 chars in the View
-            String info = ((TextView) v).getText().toString();
-            String address = info.substring(info.length() - 17);
-
-            // Make an intent to start next activity.
-            Intent i = new Intent(BTConnetion.this, NormalMode.class);
-
-            //Change the activity.
-            i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
-            startActivity(i);
-
-        }
-
-
-    };
 
 }

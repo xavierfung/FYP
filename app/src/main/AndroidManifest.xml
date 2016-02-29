@@ -17,20 +17,28 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:name=".Splash"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
-        <activity android:name=".HomePageABC" />
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="com.fyp.xavier.smarttherapy.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name="ProgramSelect" />
         <activity android:name="ViewRecord" />
         <activity android:name="NormalMode" />
-        <activity android:name=".BTConnetion" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".helper.BTConnetion" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegisterActivity" />
 
 
     </application>

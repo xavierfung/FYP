@@ -1,4 +1,4 @@
-package com.fyp.xavier.smarttherapy;
+package com.fyp.xavier.smarttherapy.activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -14,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.fyp.xavier.smarttherapy.R;
 import com.fyp.xavier.smarttherapy.app.AppConfig;
 import com.fyp.xavier.smarttherapy.app.AppController;
 import com.fyp.xavier.smarttherapy.helper.SQLiteHandler;
