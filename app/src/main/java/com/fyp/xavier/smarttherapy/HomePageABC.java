@@ -74,7 +74,7 @@ public class HomePageABC extends Activity {
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, ProgramSelect.class);
+                Intent intent = new Intent(getApplicationContext(), ProgramSelect.class);
                 startActivity(intent);
             }
         });
@@ -82,7 +82,7 @@ public class HomePageABC extends Activity {
         iButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, ViewRecord.class);
+                Intent intent = new Intent(getApplicationContext(), ViewRecord.class);
                 startActivity(intent);
             }
         });
@@ -90,7 +90,7 @@ public class HomePageABC extends Activity {
         image_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, BTConnetion.class);
+                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
                 startActivity(intent);
             }
         });
@@ -98,7 +98,7 @@ public class HomePageABC extends Activity {
         tw_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomePageABC.this, BTConnetion.class);
+                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
                 startActivity(intent);
             }
         });
@@ -126,7 +126,7 @@ public class HomePageABC extends Activity {
         db.deleteUsers();
 
         // Launching the login activity
-        Intent intent = new Intent(HomePageABC.this, LoginActivity.class);
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
         finish();
     }

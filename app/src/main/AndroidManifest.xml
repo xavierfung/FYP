@@ -30,6 +30,9 @@
         <activity android:name="NormalMode" />
         <activity android:name=".BTConnetion" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+
+
     </application>
 
 </manifest>

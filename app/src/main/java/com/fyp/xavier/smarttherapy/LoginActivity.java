@@ -93,10 +93,10 @@ public class LoginActivity extends Activity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                /**            Intent i = new Intent(getApplicationContext(),
+                Intent i = new Intent(getApplicationContext(),
                  RegisterActivity.class);
                  startActivity(i);
-                 finish(); **/
+                finish();
             }
 
         });
