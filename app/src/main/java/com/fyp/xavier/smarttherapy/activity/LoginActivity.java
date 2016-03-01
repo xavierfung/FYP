@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
     /**/
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
 
         inputUserName = (EditText) findViewById(R.id.username);
         inputPassword = (EditText) findViewById(R.id.password);

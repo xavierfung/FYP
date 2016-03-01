@@ -43,7 +43,7 @@ public class RegisterActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.activity_register);
 
         inputUserName = (EditText) findViewById(R.id.username);
         inputAuth = (EditText) findViewById(R.id.authority);
