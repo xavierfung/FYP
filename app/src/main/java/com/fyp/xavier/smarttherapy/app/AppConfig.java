@@ -11,5 +11,5 @@ public class AppConfig {
     public static String URL_WRITE = "http://192.168.1.102/android_data_api/upload.php";
 
     // Server user register url
-    public static String URL_READ = "http://192.168.1.102/android_score_api/get_all_records.php";
+    public static String URL_GET = "http://192.168.1.102/android_score_api/get_all_records.php";
 }

@@ -35,7 +35,9 @@ public class ViewRecord extends ListActivity {
     private static final String TAG_RECORDS = "records";
     private static final String TAG_UID = "uid";
     private static final String TAG_USERNAME = "username";
-    private static String url_all_records = AppConfig.URL_READ;
+    private static final String TAG_CREATED_AT = "created_at";
+    private static final String TAG_SCORE = "score";
+    private static String url_get_records = AppConfig.URL_GET;
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     ArrayList<HashMap<String, String>> recordsList;
@@ -108,7 +110,7 @@ public class ViewRecord extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_records, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_get_records, "GET", params);
 
             // Check your log cat for JSON reponse
             Log.d("All Records: ", json.toString());
@@ -129,13 +131,17 @@ public class ViewRecord extends ListActivity {
                         // Storing each json item in variable
                         String id = c.getString(TAG_UID);
                         String username = c.getString(TAG_USERNAME);
+                        String created_at = "           created at" + c.getString(TAG_CREATED_AT);
+                        String score = c.getString(TAG_SCORE);
 
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
 
                         // adding each child node to HashMap key => value
-                        map.put(TAG_UID, id);
-                        map.put(TAG_USERNAME, username);
+                        //  map.put(TAG_UID, id);
+                        //  map.put(TAG_USERNAME, username);
+                        map.put(TAG_CREATED_AT, created_at);
+                        map.put(TAG_SCORE, score);
 
                         // adding HashList to ArrayList
                         recordsList.add(map);
@@ -171,9 +177,10 @@ public class ViewRecord extends ListActivity {
                      * */
                     ListAdapter adapter = new SimpleAdapter(
                             ViewRecord.this, recordsList,
-                            R.layout.list_item, new String[]{TAG_UID,
-                            TAG_USERNAME},
-                            new int[]{R.id.uid, R.id.username});
+                            R.layout.list_item, new String[]{
+                            //TAG_UID, TAG_USERNAME,
+                            TAG_CREATED_AT, TAG_SCORE},
+                            new int[]{R.id.created_at, R.id.score});
                     // updating listview
                     setListAdapter(adapter);
                 }
