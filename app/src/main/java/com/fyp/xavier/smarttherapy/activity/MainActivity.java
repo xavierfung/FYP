@@ -18,6 +18,7 @@ import com.fyp.xavier.smarttherapy.helper.SessionManager;
 import java.util.HashMap;
 
 public class MainActivity extends Activity {
+    private static final String TAG_USERNAME = "username";
     private ImageButton iButton1;
     private ImageButton iButton2;
     private TextView twname;
@@ -43,6 +44,7 @@ public class MainActivity extends Activity {
         image_login = (ImageView) findViewById(R.id.ic_account);
         tw_login = (TextView) findViewById(R.id.login);
 
+
         // SqLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
@@ -62,6 +64,11 @@ public class MainActivity extends Activity {
         // Displaying the user details on the screen
         twname.setText(authority);
         twplace.setText(username);
+
+        Intent in = new Intent(getApplicationContext(),
+                ViewRecord.class);
+        // sending pid to next activity
+        in.putExtra(TAG_USERNAME, username);
 
         // Logout button click event
         /**  btnLogout.setOnClickListener(new View.OnClickListener() {

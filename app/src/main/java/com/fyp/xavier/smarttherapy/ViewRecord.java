@@ -2,6 +2,7 @@ package com.fyp.xavier.smarttherapy;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,8 +15,11 @@ import android.widget.TextView;
 
 import com.fyp.xavier.smarttherapy.app.AppConfig;
 import com.fyp.xavier.smarttherapy.helper.JSONParser;
+import com.fyp.xavier.smarttherapy.helper.SQLiteHandler;
+
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,11 +36,12 @@ public class ViewRecord extends ListActivity {
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_RECORDS = "records";
-    private static final String TAG_UID = "uid";
+    // private static final String TAG_UID = "uid";
     private static final String TAG_USERNAME = "username";
     private static final String TAG_CREATED_AT = "created_at";
     private static final String TAG_SCORE = "score";
     private static String url_get_records = AppConfig.URL_GET;
+    String username;
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     ArrayList<HashMap<String, String>> recordsList;
@@ -44,12 +49,20 @@ public class ViewRecord extends ListActivity {
     JSONArray records = null;
     // Progress Dialog
     private ProgressDialog pDialog;
+    private SQLiteHandler db;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
     /**/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_my_record);
+
+        // getting product details from intent
+        Intent i = getIntent();
+        // getting product id (pid) from intent
+        username = i.getStringExtra(TAG_USERNAME);
+
         // Hashmap for ListView
         recordsList = new ArrayList<HashMap<String, String>>();
 
@@ -106,8 +119,12 @@ public class ViewRecord extends ListActivity {
          * getting All products from url
          */
         protected String doInBackground(String... args) {
+
+
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("username", username));
+
             // getting JSON string from URL
             JSONObject json = jParser.makeHttpRequest(url_get_records, "GET", params);
 
@@ -128,8 +145,8 @@ public class ViewRecord extends ListActivity {
                         JSONObject c = records.getJSONObject(i);
 
                         // Storing each json item in variable
-                        String id = c.getString(TAG_UID);
-                        String username = c.getString(TAG_USERNAME);
+                        //String id = c.getString(TAG_UID);
+                        //String username = c.getString(TAG_USERNAME);
                         String created_at = "           created at" + c.getString(TAG_CREATED_AT);
                         String score = c.getString(TAG_SCORE);
 

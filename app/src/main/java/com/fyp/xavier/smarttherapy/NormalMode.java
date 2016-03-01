@@ -36,6 +36,7 @@ public class NormalMode extends Activity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     //private final int[] difficulties_timeout = new int[]{5000, 1000, 500};
     private static final Random random = new Random();
+    private static final String TAG_SCORE = "score";
     final int handlerState = 0;                        //used to identify handler message
     String address = null;
     BluetoothAdapter myBluetooth = null;
@@ -343,6 +344,12 @@ public class NormalMode extends Activity {
                                 finish();
                             }
                         }).setIcon(android.R.drawable.ic_dialog_alert).show();
+
+        Intent in = new Intent(getApplicationContext(),
+                Add_Record_Test.class);
+        // sending score to next activity
+        in.putExtra(TAG_SCORE, score);
+
     }
 
     private void wrongFinger() {
