@@ -56,12 +56,12 @@ public class MainActivity extends Activity {
         // Fetching user details from SQLite
         HashMap<String, String> user = db.getUserDetails();
 
-        String name = user.get("name");
-        String email = user.get("email");
+        String authority = user.get("authority");
+        String username = user.get("username");
 
         // Displaying the user details on the screen
-        twname.setText(name);
-        twplace.setText(email);
+        twname.setText(authority);
+        twplace.setText(username);
 
         // Logout button click event
         /**  btnLogout.setOnClickListener(new View.OnClickListener() {

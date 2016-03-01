@@ -1,21 +1,20 @@
-package com.fyp.xavier.smarttherapy;
+package com.fyp.xavier.smarttherapy.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
 
-import com.fyp.xavier.smarttherapy.activity.MainActivity;
+import com.fyp.xavier.smarttherapy.R;
 
 /**
  * Created by Xavier on 1/3/2016.
  */
-public class Splash extends Activity {
+public class SplashActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.activity_splash);
 
         Thread timerThread = new Thread() {
             public void run() {
@@ -24,7 +23,7 @@ public class Splash extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(Splash.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
             }

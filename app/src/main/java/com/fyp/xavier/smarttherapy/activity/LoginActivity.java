@@ -75,13 +75,13 @@ public class LoginActivity extends Activity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                String email = inputUserName.getText().toString().trim();
+                String username = inputUserName.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 // Check for empty data in the form
-                if (!email.isEmpty() && !password.isEmpty()) {
+                if (!username.isEmpty() && !password.isEmpty()) {
                     // login user
-                    checkLogin(email, password);
+                    checkLogin(username, password);
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
@@ -107,7 +107,7 @@ public class LoginActivity extends Activity {
     /**
      * function to verify login details in mysql db
      */
-    private void checkLogin(final String email, final String password) {
+    private void checkLogin(final String username, final String password) {
         // Tag used to cancel the request
         String tag_string_req = "req_login";
 
@@ -136,13 +136,13 @@ public class LoginActivity extends Activity {
                         String uid = jObj.getString("uid");
 
                         JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
-                        String email = user.getString("email");
+                        String auth = user.getString("authority");
+                        String username = user.getString("username");
                         String created_at = user
                                 .getString("created_at");
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
+                        db.addUser(auth, username, uid, created_at);
 
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
@@ -177,7 +177,7 @@ public class LoginActivity extends Activity {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("email", email);
+                params.put("username", username);
                 params.put("password", password);
 
                 return params;
