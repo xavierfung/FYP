@@ -1,9 +1,7 @@
 package com.fyp.xavier.smarttherapy;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +13,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.fyp.xavier.smarttherapy.app.AppConfig;
+import com.fyp.xavier.smarttherapy.helper.JSONParser;
 
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
