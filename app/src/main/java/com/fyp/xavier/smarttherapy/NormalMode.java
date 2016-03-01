@@ -51,7 +51,7 @@ public class NormalMode extends Activity {
     private Button btnstart, btnstop;
     private TextView twcounter, sensorvalue1, sensorvalue2, sensorvalue3, sensorvalue4, txtString, txtStringLength, twinstruction;
     private TextView test;
-    private ImageView FingerImage;
+    // private ImageView FingerImage;
     private WebView Gifview;
 
     @Override
