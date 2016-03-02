@@ -195,6 +195,7 @@ public class NormalMode extends Activity {
                     configureTimer();
                     drawAnFinger();
                     timer.start();
+                    btnstart.setClickable(false);
                 }
             });
 
@@ -299,23 +300,23 @@ public class NormalMode extends Activity {
 
         {
             if (currentfinger == Finger.One) {
-                Gifview.loadUrl("file:///android_asset/wtf.gif");
+                Gifview.loadUrl("file:///android_asset/finger_1.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
             }
             if (currentfinger == Finger.Two) {
-                Gifview.loadUrl("file:///android_asset/two.gif");
+                Gifview.loadUrl("file:///android_asset/finger_2.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
             }
 
             if (currentfinger == Finger.Three) {
-                Gifview.loadUrl("file:///android_asset/three.gif");
+                Gifview.loadUrl("file:///android_asset/finger_3.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
             }
             if (currentfinger == Finger.Four) {
-                Gifview.loadUrl("file:///android_asset/four.gif");
+                Gifview.loadUrl("file:///android_asset/finger_4.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
             }
@@ -334,7 +335,8 @@ public class NormalMode extends Activity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
-                                recreate();
+                                Intent intent = new Intent(getApplicationContext(), Add_Record_Test.class);
+                                startActivity(intent);
                             }
                         })
                 .setNegativeButton(android.R.string.no,
