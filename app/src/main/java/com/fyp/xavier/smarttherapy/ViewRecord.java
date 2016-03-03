@@ -46,9 +46,9 @@ public class ViewRecord extends ListActivity {
     ArrayList<HashMap<String, String>> recordsList;
     // products JSONArray
     JSONArray records = null;
+    TextView tv_usn;
     // Progress Dialog
     private ProgressDialog pDialog;
-    private SQLiteHandler db;
     private String username;
 
 
@@ -57,9 +57,6 @@ public class ViewRecord extends ListActivity {
     /**/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_my_record);
-
-        //       Bundle bundle = this.getIntent().getExtras();
-        //       username = bundle.getString("IN_username");
 
         // Hashmap for ListView
         recordsList = new ArrayList<HashMap<String, String>>();
@@ -80,19 +77,14 @@ public class ViewRecord extends ListActivity {
                 String uid = ((TextView) view.findViewById(R.id.uid)).getText()
                         .toString();
 
-                // Starting new intent
-                /**      Intent in = new Intent(getApplicationContext(),
-                 EditProductActivity.class);
-                 // sending pid to next activity
-                 in.putExtra(TAG_UID, uid);
-
-                 // starting new activity and expecting some response back
-                 startActivityForResult(in, 100);
-
-                 **/
             }
         });
 
+
+        Bundle bundlea = this.getIntent().getExtras();
+        username = bundlea.getString("IN_username");
+        TextView tv_usn = (TextView) findViewById(R.id.TV_Username);
+        tv_usn.setText(username);
     }
 
     /**

@@ -2,11 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepage_bg">
+    android:background="@drawable/homepage_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/TV_Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="ABC" />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="10dp" />
 </LinearLayout>

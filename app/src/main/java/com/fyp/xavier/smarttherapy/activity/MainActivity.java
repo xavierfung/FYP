@@ -65,10 +65,6 @@ public class MainActivity extends Activity {
         // Displaying the user details on the screen
         twname.setText(authority);
         twplace.setText(username);
-        Intent intent = new Intent(getApplicationContext(), Add_Record_Test.class);
-        Bundle bundlea = new Bundle();
-        bundlea.putString("IN_username", username);
-        intent.putExtras(bundlea);
 
         // Logout button click event
         /**  btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -101,9 +97,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("IN_username", username);
-                intent.putExtras(bundle);
+                ;
                 startActivity(intent);
             }
         });
