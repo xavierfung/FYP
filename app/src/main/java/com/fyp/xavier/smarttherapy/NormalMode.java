@@ -52,6 +52,7 @@ public class NormalMode extends Activity {
     private TextView test;
     // private ImageView FingerImage;
     private WebView Gifview;
+    private String username;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,8 @@ public class NormalMode extends Activity {
         test = (TextView) findViewById(R.id.tvtest);
         Gifview = (WebView) findViewById(R.id.web_view);
 
+        Bundle bundlec = this.getIntent().getExtras();
+        username = bundlec.getString("IN_username");
 
         bluetoothIn = new Handler() {
             public void handleMessage(android.os.Message msg) {
@@ -334,13 +337,13 @@ public class NormalMode extends Activity {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
 
-
-                                Intent intent = new Intent(NormalMode.this, Add_Record_Test.class);
+                                Intent intent = new Intent(getApplicationContext(), Add_Record_Test.class);
                                 Bundle bundle = new Bundle();
+                                bundle.putString("IN_username", username);
                                 bundle.putInt("TAG_SCORE", score);
                                 intent.putExtras(bundle);
-                                // sending score to next activity
                                 startActivity(intent);
+                                finish();
                                 //recreate();
                             }
                         })

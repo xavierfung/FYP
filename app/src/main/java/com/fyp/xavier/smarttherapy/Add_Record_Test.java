@@ -32,10 +32,11 @@ public class Add_Record_Test extends Activity {
     private static final String TAG_SUCCESS = "success";
     private static String url_upload = AppConfig.URL_UPLOAD;
     JSONParser jsonParser = new JSONParser();
-    int score;
+    private int score;
     // Progress Dialog
     private ProgressDialog pDialog;
-    private TextView tw_score, tw_username;
+    private TextView tw_score, tw_username, tw_remarks;
+    private String username, remarks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,16 +44,18 @@ public class Add_Record_Test extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_record);
 
-        // String score = intent.getExtras().getString("TAG_SCORE");
-        Bundle bundle = this.getIntent().getExtras();
-        int score = bundle.getInt("TAG_SCORE");
-        //Bundle bundlea = this.getIntent().getExtras();
-        //String username = bundlea.getString("IN_username");
+
+        Bundle bundleb = this.getIntent().getExtras();
+        username = bundleb.getString("IN_username");
+        score = bundleb.getInt("TAG_SCORE");
+        DecideGrade();
 
         tw_score = (TextView) findViewById(R.id.finalscore);
-        tw_score.setText(String.valueOf(score));
+        tw_score.setText(String.valueOf("Score:" + score));
         tw_username = (TextView) findViewById(R.id.finalusername);
-        //tw_username.setText(String.valueOf(username));
+        tw_username.setText("username: " + username);
+        tw_remarks = (TextView) findViewById(R.id.finalremarks);
+        tw_remarks.setText(remarks);
 
         Button btnUploadScore = (Button) findViewById(R.id.btnUpload);
 
@@ -66,6 +69,25 @@ public class Add_Record_Test extends Activity {
             }
         });
 
+
+    }
+
+    private void DecideGrade() {
+        if (score > 25) {
+            remarks = "A";
+        } else if (score > 20) {
+            remarks = "B";
+        } else if (score > 15) {
+            remarks = "C";
+        } else if (score > 10) {
+            remarks = "D";
+        } else if (score > 5) {
+            remarks = "E";
+        } else if (score > 0) {
+            remarks = "F";
+        } else {
+            remarks = "U";
+        }
     }
 
     /**
@@ -90,16 +112,11 @@ public class Add_Record_Test extends Activity {
          * Creating product
          */
         protected String doInBackground(String... args) {
-            String username = "xavierfung";
-            String score = "50";
-            //inputPrice.getText().toString();
-            String remarks = "GOOD";
-            //inputDesc.getText().toString();
 
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("username", username));
-            params.add(new BasicNameValuePair("score", score));
+            params.add(new BasicNameValuePair("score", Integer.toString(score)));
             params.add(new BasicNameValuePair("remarks", remarks));
 
             // getting JSON Object
@@ -117,6 +134,9 @@ public class Add_Record_Test extends Activity {
                 if (success == 1) {
                     // successfully created product
                     Intent i = new Intent(getApplicationContext(), ViewRecord.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("IN_username", username);
+                    i.putExtras(bundle);
                     startActivity(i);
 
                     // closing this screen
@@ -138,6 +158,7 @@ public class Add_Record_Test extends Activity {
             // dismiss the dialog once done
             pDialog.dismiss();
         }
+
 
     }
 }

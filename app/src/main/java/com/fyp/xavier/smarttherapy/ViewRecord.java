@@ -74,17 +74,14 @@ public class ViewRecord extends ListActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // getting values from selected ListItem
-                String uid = ((TextView) view.findViewById(R.id.uid)).getText()
-                        .toString();
-
+                //String uid = ((TextView) view.findViewById(R.id.uid)).getText().toString();
             }
         });
-
 
         Bundle bundlea = this.getIntent().getExtras();
         username = bundlea.getString("IN_username");
         TextView tv_usn = (TextView) findViewById(R.id.TV_Username);
-        tv_usn.setText(username);
+        tv_usn.setText("username:  " + username);
     }
 
     /**

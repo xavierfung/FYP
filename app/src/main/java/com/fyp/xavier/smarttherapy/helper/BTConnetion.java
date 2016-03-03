@@ -30,6 +30,8 @@ public class BTConnetion extends Activity {
 //widgets
     Button btnPaired;
     ListView devicelist;
+    private String username;
+
     //Bluetooth
     private BluetoothAdapter myBluetooth = null;
     private Set<BluetoothDevice> pairedDevices;
@@ -41,6 +43,9 @@ public class BTConnetion extends Activity {
 
             // Make an intent to start next activity.
             Intent i = new Intent(BTConnetion.this, NormalMode.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("IN_username", username);
+            i.putExtras(bundle);
 
             //Change the activity.
             i.putExtra(EXTRA_ADDRESS, address); //this will be received at ledControl (class) Activity
@@ -55,6 +60,9 @@ public class BTConnetion extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bt_connection);
+
+        Bundle bundlec = this.getIntent().getExtras();
+        username = bundlec.getString("IN_username");
 
         //Calling widgets
         btnPaired = (Button) findViewById(R.id.button);

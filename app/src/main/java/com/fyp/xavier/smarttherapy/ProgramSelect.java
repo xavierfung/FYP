@@ -17,18 +17,21 @@ import java.util.HashMap;
  * Created by Xavier on 16/1/2016.
  */
 public class ProgramSelect extends Activity {
-    private ImageButton iButton1;
-    private ImageButton iButton2;
+    private ImageButton iButton1, iButton2;
     private TextView twname, twplace;
     private SQLiteHandler db;
     private SessionManager session;
-
+    private String username;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
     /**/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.program_select);
+
+        Bundle bundlec = this.getIntent().getExtras();
+        username = bundlec.getString("IN_username");
+
         iButton1 = (ImageButton) findViewById(R.id.imageButton1);
         iButton2 = (ImageButton) findViewById(R.id.imageButton2);
         twname = (TextView) findViewById(R.id.name);
@@ -54,7 +57,10 @@ public class ProgramSelect extends Activity {
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProgramSelect.this, BTConnetion.class);
+                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("IN_username", username);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
             }
@@ -63,7 +69,7 @@ public class ProgramSelect extends Activity {
         iButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProgramSelect.this, FunMode.class);
+                Intent intent = new Intent(getApplicationContext(), FunMode.class);
                 startActivity(intent);
                 finish();
             }

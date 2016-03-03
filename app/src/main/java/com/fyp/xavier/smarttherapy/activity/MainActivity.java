@@ -78,6 +78,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProgramSelect.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("IN_username", username);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
