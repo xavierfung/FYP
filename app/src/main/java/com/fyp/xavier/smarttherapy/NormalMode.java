@@ -13,7 +13,6 @@ import android.os.Handler;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +35,6 @@ public class NormalMode extends Activity {
     static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     //private final int[] difficulties_timeout = new int[]{5000, 1000, 500};
     private static final Random random = new Random();
-    private static final String TAG_SCORE = "score";
     final int handlerState = 0;                        //used to identify handler message
     String address = null;
     BluetoothAdapter myBluetooth = null;
@@ -109,50 +107,50 @@ public class NormalMode extends Activity {
                             {
                                 if (currentfinger == Finger.One) {
 
-                                    if (sensorr0 < 2.5) {
+                                    if (sensorr0 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
-                                    if (sensorr1 < 2.5) {
+                                    if (sensorr1 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr2 < 2.5) {
+                                    if (sensorr2 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr3 < 2.5) {
+                                    if (sensorr3 > 2.5) {
                                         wrongFinger();
                                     }
                                 }
                                 if (currentfinger == Finger.Two) {
 
-                                    if (sensorr0 < 2.5) {
+                                    if (sensorr0 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr1 < 2.5) {
+                                    if (sensorr1 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
-                                    if (sensorr2 < 2.5) {
+                                    if (sensorr2 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr3 < 2.5) {
+                                    if (sensorr3 > 2.5) {
                                         wrongFinger();
                                     }
                                 }
 
                                 if (currentfinger == Finger.Three) {
 
-                                    if (sensorr0 < 2.5) {
+                                    if (sensorr0 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr1 < 2.5) {
+                                    if (sensorr1 > 2.5) {
                                         wrongFinger();
                                     }
-                                    if (sensorr2 < 2.5) {
+                                    if (sensorr2 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
-                                    if (sensorr3 < 2.5) {
+                                    if (sensorr3 > 2.5) {
                                         wrongFinger();
                                     }
                                 }
@@ -327,7 +325,7 @@ public class NormalMode extends Activity {
 
     private void gameover() {
         // Stop the count down, show gameover
-        timer.cancel();
+        // timer.cancel();
         new AlertDialog.Builder(this)
                 .setTitle("Gameover")
                 .setMessage(String.format("Score: %d\nUpload Data", score))
@@ -335,8 +333,15 @@ public class NormalMode extends Activity {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
-                                Intent intent = new Intent(getApplicationContext(), Add_Record_Test.class);
+
+
+                                Intent intent = new Intent(NormalMode.this, Add_Record_Test.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("TAG_SCORE", score);
+                                intent.putExtras(bundle);
+                                // sending score to next activity
                                 startActivity(intent);
+                                //recreate();
                             }
                         })
                 .setNegativeButton(android.R.string.no,
@@ -346,11 +351,6 @@ public class NormalMode extends Activity {
                                 finish();
                             }
                         }).setIcon(android.R.drawable.ic_dialog_alert).show();
-
-        Intent in = new Intent(getApplicationContext(),
-                Add_Record_Test.class);
-        // sending score to next activity
-        in.putExtra(TAG_SCORE, score);
 
     }
 

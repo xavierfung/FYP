@@ -37,11 +37,10 @@ public class ViewRecord extends ListActivity {
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_RECORDS = "records";
     // private static final String TAG_UID = "uid";
-    private static final String TAG_USERNAME = "username";
+    //private static final String TAG_USERNAME = "username";
     private static final String TAG_CREATED_AT = "created_at";
     private static final String TAG_SCORE = "score";
     private static String url_get_records = AppConfig.URL_GET;
-    String username;
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
     ArrayList<HashMap<String, String>> recordsList;
@@ -50,6 +49,7 @@ public class ViewRecord extends ListActivity {
     // Progress Dialog
     private ProgressDialog pDialog;
     private SQLiteHandler db;
+    private String username;
 
 
     @Override
@@ -58,10 +58,8 @@ public class ViewRecord extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_my_record);
 
-        // getting product details from intent
-        Intent i = getIntent();
-        // getting product id (pid) from intent
-        username = i.getStringExtra(TAG_USERNAME);
+        //       Bundle bundle = this.getIntent().getExtras();
+        //       username = bundle.getString("IN_username");
 
         // Hashmap for ListView
         recordsList = new ArrayList<HashMap<String, String>>();
@@ -111,7 +109,7 @@ public class ViewRecord extends ListActivity {
             pDialog = new ProgressDialog(ViewRecord.this);
             pDialog.setMessage("Loading records. Please wait...");
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
             pDialog.show();
         }
 
@@ -119,7 +117,6 @@ public class ViewRecord extends ListActivity {
          * getting All products from url
          */
         protected String doInBackground(String... args) {
-
 
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();

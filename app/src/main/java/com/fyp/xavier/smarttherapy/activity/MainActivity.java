@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.fyp.xavier.smarttherapy.Add_Record_Test;
 import com.fyp.xavier.smarttherapy.helper.BTConnetion;
 import com.fyp.xavier.smarttherapy.ProgramSelect;
 import com.fyp.xavier.smarttherapy.R;
@@ -59,16 +60,15 @@ public class MainActivity extends Activity {
         HashMap<String, String> user = db.getUserDetails();
 
         String authority = user.get("authority");
-        String username = user.get("username");
+        final String username = user.get("username");
 
         // Displaying the user details on the screen
         twname.setText(authority);
         twplace.setText(username);
-
-        Intent in = new Intent(getApplicationContext(),
-                ViewRecord.class);
-        // sending pid to next activity
-        in.putExtra(TAG_USERNAME, username);
+        Intent intent = new Intent(getApplicationContext(), Add_Record_Test.class);
+        Bundle bundlea = new Bundle();
+        bundlea.putString("IN_username", username);
+        intent.putExtras(bundlea);
 
         // Logout button click event
         /**  btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +90,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ViewRecord.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("IN_username", username);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -98,6 +101,9 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("IN_username", username);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
