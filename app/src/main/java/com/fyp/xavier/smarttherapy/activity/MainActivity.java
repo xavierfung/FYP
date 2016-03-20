@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ProgramSelect.class);
+                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("IN_username", username);
                 intent.putExtras(bundle);
@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        image_setting.setOnClickListener(new View.OnClickListener() {
+        /**   image_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
@@ -112,7 +112,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
+         **/
         image_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

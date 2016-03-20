@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ public class NormalMode extends Activity {
     private Button btnstart, btnstop;
     private TextView twcounter, sensorvalue1, sensorvalue2, sensorvalue3, sensorvalue4, txtString, txtStringLength, twinstruction;
     private TextView test;
+    private ImageView i1, i2, i3, i4;
     // private ImageView FingerImage;
     private WebView Gifview;
     private String username;
@@ -74,6 +76,10 @@ public class NormalMode extends Activity {
         twinstruction = (TextView) findViewById(R.id.twinstruction);
         test = (TextView) findViewById(R.id.tvtest);
         Gifview = (WebView) findViewById(R.id.web_view);
+        i1 = (ImageView) findViewById(R.id.i1);
+        i2 = (ImageView) findViewById(R.id.i2);
+        i3 = (ImageView) findViewById(R.id.i3);
+        i4 = (ImageView) findViewById(R.id.i4);
 
         Bundle bundlec = this.getIntent().getExtras();
         username = bundlec.getString("IN_username");
@@ -298,32 +304,37 @@ public class NormalMode extends Activity {
         // Draw a random finger, write the hint, restart the count down
         currentfinger = Finger.values()[random.nextInt(Finger.values().length)];
         twinstruction.setText("Please Press Finger " + currentfinger.name());
-
+        i1.setImageResource(R.drawable.button1);
+        i2.setImageResource(R.drawable.button2);
+        i3.setImageResource(R.drawable.button3);
+        i4.setImageResource(R.drawable.button4);
         {
             if (currentfinger == Finger.One) {
                 Gifview.loadUrl("file:///android_asset/finger_1.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
+                i1.setImageResource(R.drawable.button5);
             }
             if (currentfinger == Finger.Two) {
                 Gifview.loadUrl("file:///android_asset/finger_2.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
+                i2.setImageResource(R.drawable.button5);
             }
 
             if (currentfinger == Finger.Three) {
                 Gifview.loadUrl("file:///android_asset/finger_3.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
+                i3.setImageResource(R.drawable.button5);
             }
             if (currentfinger == Finger.Four) {
                 Gifview.loadUrl("file:///android_asset/finger_4.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
+                i4.setImageResource(R.drawable.button5);
             }
         }
-
-
     }
 
     private void gameover() {
@@ -354,13 +365,11 @@ public class NormalMode extends Activity {
                                 finish();
                             }
                         }).setIcon(android.R.drawable.ic_dialog_alert).show();
-
     }
 
     private void wrongFinger() {
         test.setText("Wrong, Please try again");
     }
-
 
     //game
     enum Finger {

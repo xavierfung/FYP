@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepage_bg">
+    android:background="@drawable/homepage_bg"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView1"
@@ -14,23 +15,88 @@
         android:text="Counter"
         android:textSize="50dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/button2"
-        android:text="Start" />
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/button2"
+    <TextView
+        android:id="@+id/twinstruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:text="Instruction"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tvtest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/twinstruction"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/button1" />
+
+        <ImageView
+            android:id="@+id/i2"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/button2" />
+
+        <ImageView
+            android:id="@+id/i3"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/button3" />
+
+        <ImageView
+            android:id="@+id/i4"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:background="@drawable/button4" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/button2"
+            android:text="Start" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
         android:layout_above="@+id/txtStringLength"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="27dp"
         android:text="Stop" />
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/fsr_value4"
         android:layout_width="wrap_content"
@@ -85,31 +151,5 @@
         android:layout_alignParentRight="true"
         android:text="New Text" />
 
-    <TextView
-        android:id="@+id/twinstruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:textSize="20dp"
-        android:text="Instruction" />
-
-    <WebView
-        android:id="@+id/web_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView1" />
-
-
-    <TextView
-        android:id="@+id/tvtest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/twinstruction"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="20dp" />
-
 </RelativeLayout>
+</LinearLayout>
