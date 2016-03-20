@@ -2,24 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homepage_bg"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp"
-        android:text="Counter"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/counter_box"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="000"
         android:textSize="50dp" />
 
     <WebView
         android:id="@+id/web_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_width="360dp"
+        android:layout_height="240dp"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -47,109 +45,190 @@
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/i1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@drawable/button1" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-        <ImageView
-            android:id="@+id/i2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@drawable/button2" />
+            <ImageView
+                android:id="@+id/i1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/button1" />
 
-        <ImageView
-            android:id="@+id/i3"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@drawable/button3" />
+            <TextView
+                android:id="@+id/it1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i1"
+                android:layout_alignLeft="@id/i1"
+                android:layout_alignRight="@id/i1"
+                android:layout_alignTop="@id/i1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#000079"
+                android:textSize="50sp" />
 
-        <ImageView
-            android:id="@+id/i4"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:background="@drawable/button4" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/i2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/button2" />
+
+            <TextView
+                android:id="@+id/it2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i2"
+                android:layout_alignLeft="@id/i2"
+                android:layout_alignRight="@id/i2"
+                android:layout_alignTop="@id/i2"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#5B4B00"
+                android:textSize="50sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <ImageView
+                android:id="@+id/i3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/button3" />
+
+            <TextView
+                android:id="@+id/it3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i3"
+                android:layout_alignLeft="@id/i3"
+                android:layout_alignRight="@id/i3"
+                android:layout_alignTop="@id/i3"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#006030"
+                android:textSize="50sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/i4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/button4" />
+
+            <TextView
+                android:id="@+id/it4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i4"
+                android:layout_alignLeft="@id/i4"
+                android:layout_alignRight="@id/i4"
+                android:layout_alignTop="@id/i4"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="#2F0000"
+                android:textSize="50sp" />
+        </RelativeLayout>
+
+
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/button2"
-            android:text="Start" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:text="Start" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/txtStringLength"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="27dp"
+        android:layout_gravity="center_horizontal"
         android:text="Stop" />
-    </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/fsr_value4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Sensor4" />
 
-    <TextView
-        android:id="@+id/fsr_value3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/fsr_value4"
-        android:layout_toStartOf="@+id/fsr_value4"
-        android:text="Sensor3" />
+        <TextView
+            android:id="@+id/fsr_value4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Sensor4" />
 
-    <TextView
-        android:id="@+id/fsr_value2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/fsr_value3"
-        android:layout_toStartOf="@+id/fsr_value3"
-        android:text="Sensor2" />
+        <TextView
+            android:id="@+id/fsr_value3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value4"
+            android:layout_toStartOf="@+id/fsr_value4"
+            android:text="Sensor3" />
 
-    <TextView
-        android:id="@+id/fsr_value1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/fsr_value2"
-        android:layout_toStartOf="@+id/fsr_value2"
-        android:text="Sensor1" />
+        <TextView
+            android:id="@+id/fsr_value2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value3"
+            android:layout_toStartOf="@+id/fsr_value3"
+            android:text="Sensor2" />
 
-    <TextView
-        android:id="@+id/txtString"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fsr_value4"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="New Text" />
+        <TextView
+            android:id="@+id/fsr_value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value2"
+            android:layout_toStartOf="@+id/fsr_value2"
+            android:text="Sensor1" />
 
-    <TextView
-        android:id="@+id/txtStringLength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtString"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="New Text" />
+        <TextView
+            android:id="@+id/txtString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fsr_value4"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="New Text" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/txtStringLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtString"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="New Text" />
+
+    </RelativeLayout>
 </LinearLayout>
