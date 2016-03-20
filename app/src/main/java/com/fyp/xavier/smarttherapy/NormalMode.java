@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.fyp.xavier.smarttherapy.helper.BTConnetion;
 
 import java.io.IOException;
@@ -121,58 +123,58 @@ public class NormalMode extends Activity {
                                         drawAnFinger();
                                     }
                                     if (sensorr1 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger2();
                                     }
                                     if (sensorr2 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger3();
                                     }
                                     if (sensorr3 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger4();
                                     }
                                 }
                                 if (currentfinger == Finger.Two) {
 
                                     if (sensorr0 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger1();
                                     }
                                     if (sensorr1 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
                                     if (sensorr2 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger3();
                                     }
                                     if (sensorr3 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger4();
                                     }
                                 }
 
                                 if (currentfinger == Finger.Three) {
 
                                     if (sensorr0 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger1();
                                     }
                                     if (sensorr1 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger2();
                                     }
                                     if (sensorr2 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
                                     if (sensorr3 > 2.5) {
-                                        wrongFinger();
+                                        wrongFinger4();
                                     }
                                 }
                                 if (currentfinger == Finger.Four) {
 
                                     if (sensorr0 < 2.5) {
-                                        wrongFinger();
+                                        wrongFinger1();
                                     }
                                     if (sensorr1 < 2.5) {
-                                        wrongFinger();
+                                        wrongFinger2();
                                     }
                                     if (sensorr2 < 2.5) {
-                                        wrongFinger();
+                                        wrongFinger3();
                                     }
                                     if (sensorr3 < 2.5) {
                                         score++;
@@ -313,26 +315,50 @@ public class NormalMode extends Activity {
                 Gifview.loadUrl("file:///android_asset/finger_1.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
-                i1.setImageResource(R.drawable.button5);
+                i1.setVisibility(View.VISIBLE);
+                i2.setVisibility(View.INVISIBLE);
+                i3.setVisibility(View.INVISIBLE);
+                i4.setVisibility(View.INVISIBLE);
+                YoYo.with(Techniques.Shake)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.i1));
             }
             if (currentfinger == Finger.Two) {
                 Gifview.loadUrl("file:///android_asset/finger_2.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
-                i2.setImageResource(R.drawable.button5);
+                i1.setVisibility(View.INVISIBLE);
+                i2.setVisibility(View.VISIBLE);
+                i3.setVisibility(View.INVISIBLE);
+                i4.setVisibility(View.INVISIBLE);
+                YoYo.with(Techniques.Shake)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.i2));
             }
 
             if (currentfinger == Finger.Three) {
                 Gifview.loadUrl("file:///android_asset/finger_3.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
-                i3.setImageResource(R.drawable.button5);
+                i1.setVisibility(View.INVISIBLE);
+                i2.setVisibility(View.INVISIBLE);
+                i3.setVisibility(View.VISIBLE);
+                i4.setVisibility(View.INVISIBLE);
+                YoYo.with(Techniques.Shake)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.i3));
             }
             if (currentfinger == Finger.Four) {
                 Gifview.loadUrl("file:///android_asset/finger_4.GIF");
                 Gifview.getSettings().setLoadWithOverviewMode(true);
                 Gifview.getSettings().setUseWideViewPort(true);
-                i4.setImageResource(R.drawable.button5);
+                i1.setVisibility(View.INVISIBLE);
+                i2.setVisibility(View.INVISIBLE);
+                i3.setVisibility(View.INVISIBLE);
+                i4.setVisibility(View.VISIBLE);
+                YoYo.with(Techniques.Shake)
+                        .duration(1000)
+                        .playOn(findViewById(R.id.i4));
             }
         }
     }
@@ -367,8 +393,26 @@ public class NormalMode extends Activity {
                         }).setIcon(android.R.drawable.ic_dialog_alert).show();
     }
 
-    private void wrongFinger() {
+    private void wrongFinger1() {
         test.setText("Wrong, Please try again");
+        i1.setImageResource(R.drawable.button6);
+        //     setnDuration(100);
+        i1.setImageResource(R.drawable.button1);
+    }
+
+    private void wrongFinger2() {
+        test.setText("Wrong, Please try again");
+        i2.setImageResource(R.drawable.button6);
+    }
+
+    private void wrongFinger3() {
+        test.setText("Wrong, Please try again");
+        i3.setImageResource(R.drawable.button6);
+    }
+
+    private void wrongFinger4() {
+        test.setText("Wrong, Please try again");
+        i4.setImageResource(R.drawable.button6);
     }
 
     //game
