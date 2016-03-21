@@ -32,7 +32,7 @@ public class Add_Record_Test extends Activity {
     private static final String TAG_SUCCESS = "success";
     private static String url_upload = AppConfig.URL_UPLOAD;
     JSONParser jsonParser = new JSONParser();
-    private int score;
+    private int score, false_counter;
     // Progress Dialog
     private ProgressDialog pDialog;
     private TextView tw_score, tw_username, tw_remarks;
@@ -48,6 +48,7 @@ public class Add_Record_Test extends Activity {
         Bundle bundleb = this.getIntent().getExtras();
         username = bundleb.getString("IN_username");
         score = bundleb.getInt("TAG_SCORE");
+        false_counter = bundleb.getInt("TAG_false_counter");
         DecideGrade();
 
         tw_score = (TextView) findViewById(R.id.finalscore);
@@ -69,21 +70,20 @@ public class Add_Record_Test extends Activity {
             }
         });
 
-
     }
 
     private void DecideGrade() {
-        if (score > 25) {
+        if ((10 + score - 0.5 * false_counter) > 25) {
             remarks = "A";
-        } else if (score > 20) {
+        } else if ((10 + score - 0.5 * false_counter) > 20) {
             remarks = "B";
-        } else if (score > 15) {
+        } else if ((10 + score - 0.5 * false_counter) > 15) {
             remarks = "C";
-        } else if (score > 10) {
+        } else if ((10 + score - 0.5 * false_counter) > 10) {
             remarks = "D";
-        } else if (score > 5) {
+        } else if ((10 + score - 0.5 * false_counter) > 5) {
             remarks = "E";
-        } else if (score > 0) {
+        } else if ((10 + score - 0.5 * false_counter) > 0) {
             remarks = "F";
         } else {
             remarks = "U";

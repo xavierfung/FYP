@@ -45,6 +45,7 @@ public class NormalMode extends Activity {
     Handler bluetoothIn;
     Double sensorr0, sensorr1, sensorr2, sensorr3;
     int score = 0;
+    int false_counter = 0;
     CountDownTimer timer = null;
     Finger currentfinger = null;
     int currentMillis = 0;
@@ -54,7 +55,6 @@ public class NormalMode extends Activity {
     private TextView twcounter, sensorvalue1, sensorvalue2, sensorvalue3, sensorvalue4, txtString, txtStringLength;
     //    private TextView test, twinstruction;
     private ImageView i1, i2, i3, i4, i5, i6, i7, i8;
-    // private ImageView FingerImage;
     private WebView Gifview;
     private String username;
 
@@ -387,6 +387,7 @@ public class NormalMode extends Activity {
                                 Bundle bundle = new Bundle();
                                 bundle.putString("IN_username", username);
                                 bundle.putInt("TAG_SCORE", score);
+                                bundle.putInt("TAG_FALSE", false_counter);
                                 intent.putExtras(bundle);
                                 startActivity(intent);
                                 finish();
@@ -409,6 +410,7 @@ public class NormalMode extends Activity {
                 .duration(700)
                 .playOn(findViewById(R.id.i5));
         i1.setImageResource(R.drawable.button1);
+        false_counter++;
     }
 
     private void wrongFinger2() {
@@ -418,6 +420,7 @@ public class NormalMode extends Activity {
                 .duration(700)
                 .playOn(findViewById(R.id.i6));
         i2.setImageResource(R.drawable.button6);
+        false_counter++;
     }
 
     private void wrongFinger3() {
@@ -427,6 +430,7 @@ public class NormalMode extends Activity {
                 .duration(700)
                 .playOn(findViewById(R.id.i7));
         i3.setImageResource(R.drawable.button6);
+        false_counter++;
     }
 
     private void wrongFinger4() {
@@ -436,6 +440,7 @@ public class NormalMode extends Activity {
                 .duration(700)
                 .playOn(findViewById(R.id.i8));
         i4.setImageResource(R.drawable.button6);
+        false_counter++;
     }
 
     //game
