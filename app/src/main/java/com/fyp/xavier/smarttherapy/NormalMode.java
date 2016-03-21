@@ -51,9 +51,9 @@ public class NormalMode extends Activity {
     private StringBuilder recDataString = new StringBuilder();
     private ConnectedThread mConnectedThread;
     private Button btnstart, btnstop;
-    private TextView twcounter, sensorvalue1, sensorvalue2, sensorvalue3, sensorvalue4, txtString, txtStringLength, twinstruction;
-    private TextView test;
-    private ImageView i1, i2, i3, i4;
+    private TextView twcounter, sensorvalue1, sensorvalue2, sensorvalue3, sensorvalue4, txtString, txtStringLength;
+    //    private TextView test, twinstruction;
+    private ImageView i1, i2, i3, i4, i5, i6, i7, i8;
     // private ImageView FingerImage;
     private WebView Gifview;
     private String username;
@@ -75,13 +75,21 @@ public class NormalMode extends Activity {
         sensorvalue2 = (TextView) findViewById(R.id.fsr_value2);
         sensorvalue3 = (TextView) findViewById(R.id.fsr_value3);
         sensorvalue4 = (TextView) findViewById(R.id.fsr_value4);
-        twinstruction = (TextView) findViewById(R.id.twinstruction);
-        test = (TextView) findViewById(R.id.tvtest);
+//        twinstruction = (TextView) findViewById(R.id.twinstruction);
+//        test = (TextView) findViewById(R.id.tvtest);
         Gifview = (WebView) findViewById(R.id.web_view);
         i1 = (ImageView) findViewById(R.id.i1);
         i2 = (ImageView) findViewById(R.id.i2);
         i3 = (ImageView) findViewById(R.id.i3);
         i4 = (ImageView) findViewById(R.id.i4);
+        i5 = (ImageView) findViewById(R.id.i5);
+        i6 = (ImageView) findViewById(R.id.i6);
+        i7 = (ImageView) findViewById(R.id.i7);
+        i8 = (ImageView) findViewById(R.id.i8);
+        i5.setVisibility(View.INVISIBLE);
+        i6.setVisibility(View.INVISIBLE);
+        i7.setVisibility(View.INVISIBLE);
+        i8.setVisibility(View.INVISIBLE);
 
         Bundle bundlec = this.getIntent().getExtras();
         username = bundlec.getString("IN_username");
@@ -305,11 +313,12 @@ public class NormalMode extends Activity {
     private void drawAnFinger() {
         // Draw a random finger, write the hint, restart the count down
         currentfinger = Finger.values()[random.nextInt(Finger.values().length)];
-        twinstruction.setText("Please Press Finger " + currentfinger.name());
-        i1.setImageResource(R.drawable.button1);
-        i2.setImageResource(R.drawable.button2);
-        i3.setImageResource(R.drawable.button3);
-        i4.setImageResource(R.drawable.button4);
+//        twinstruction.setText("Please Press Finger " + currentfinger.name());
+        i5.setVisibility(View.INVISIBLE);
+        i6.setVisibility(View.INVISIBLE);
+        i7.setVisibility(View.INVISIBLE);
+        i8.setVisibility(View.INVISIBLE);
+
         {
             if (currentfinger == Finger.One) {
                 Gifview.loadUrl("file:///android_asset/finger_1.GIF");
@@ -394,24 +403,38 @@ public class NormalMode extends Activity {
     }
 
     private void wrongFinger1() {
-        test.setText("Wrong, Please try again");
-        i1.setImageResource(R.drawable.button6);
-        //     setnDuration(100);
+//        test.setText("Wrong, Please try again");
+        i5.setVisibility(View.VISIBLE);
+        YoYo.with(Techniques.DropOut)
+                .duration(700)
+                .playOn(findViewById(R.id.i5));
         i1.setImageResource(R.drawable.button1);
     }
 
     private void wrongFinger2() {
-        test.setText("Wrong, Please try again");
+//        test.setText("Wrong, Please try again");
+        i6.setVisibility(View.VISIBLE);
+        YoYo.with(Techniques.DropOut)
+                .duration(700)
+                .playOn(findViewById(R.id.i6));
         i2.setImageResource(R.drawable.button6);
     }
 
     private void wrongFinger3() {
-        test.setText("Wrong, Please try again");
+//        test.setText("Wrong, Please try again");
+        i7.setVisibility(View.VISIBLE);
+        YoYo.with(Techniques.DropOut)
+                .duration(700)
+                .playOn(findViewById(R.id.i7));
         i3.setImageResource(R.drawable.button6);
     }
 
     private void wrongFinger4() {
-        test.setText("Wrong, Please try again");
+//        test.setText("Wrong, Please try again");
+        i8.setVisibility(View.VISIBLE);
+        YoYo.with(Techniques.DropOut)
+                .duration(700)
+                .playOn(findViewById(R.id.i8));
         i4.setImageResource(R.drawable.button6);
     }
 

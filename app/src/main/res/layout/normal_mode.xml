@@ -20,24 +20,24 @@
         android:layout_height="240dp"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/twinstruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:text="Instruction"
-        android:textSize="20dp" />
+    <!--<TextView-->
+    <!--android:id="@+id/twinstruction"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/button"-->
+    <!--android:layout_alignLeft="@+id/button"-->
+    <!--android:layout_alignStart="@+id/button"-->
+    <!--android:text="Instruction"-->
+    <!--android:textSize="20dp" />-->
 
-    <TextView
-        android:id="@+id/tvtest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/twinstruction"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="20dp" />
+    <!--<TextView-->
+    <!--android:id="@+id/tvtest"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/twinstruction"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:textSize="20dp" />-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -54,6 +54,16 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/button1" />
+
+            <ImageView
+                android:id="@+id/i5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignBottom="@id/i1"
+                android:layout_alignLeft="@id/i1"
+                android:layout_alignRight="@id/i1"
+                android:layout_alignTop="@id/i1"
+                android:background="@drawable/button6" />
 
             <TextView
                 android:id="@+id/it1"
@@ -80,6 +90,16 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/button2" />
+
+            <ImageView
+                android:id="@+id/i6"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignBottom="@id/i2"
+                android:layout_alignLeft="@id/i2"
+                android:layout_alignRight="@id/i2"
+                android:layout_alignTop="@id/i2"
+                android:background="@drawable/button6" />
 
             <TextView
                 android:id="@+id/it2"
@@ -108,6 +128,16 @@
                 android:layout_height="70dp"
                 android:background="@drawable/button3" />
 
+            <ImageView
+                android:id="@+id/i7"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignBottom="@id/i3"
+                android:layout_alignLeft="@id/i3"
+                android:layout_alignRight="@id/i3"
+                android:layout_alignTop="@id/i3"
+                android:background="@drawable/button6" />
+
             <TextView
                 android:id="@+id/it3"
                 android:layout_width="wrap_content"
@@ -133,6 +163,16 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/button4" />
+
+            <ImageView
+                android:id="@+id/i8"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignBottom="@id/i4"
+                android:layout_alignLeft="@id/i4"
+                android:layout_alignRight="@id/i4"
+                android:layout_alignTop="@id/i4"
+                android:background="@drawable/button6" />
 
             <TextView
                 android:id="@+id/it4"
