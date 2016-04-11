@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/training_program_bg"
+    android:orientation="vertical">
+
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/imageButton2"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="29dp"
+        android:layout_weight="1"
+        android:background="@drawable/normal_mode"
+        android:scaleType="fitXY" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="280dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="154dp"
+        android:layout_weight="1"
+        android:background="@drawable/fun_mode"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/place"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="36dp"
+        android:text="Chan Tai Man" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="73dp"
+        android:text="XXX hospital" />
+
+
+</RelativeLayout>

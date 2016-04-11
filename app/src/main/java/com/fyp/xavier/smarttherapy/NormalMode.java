@@ -175,16 +175,16 @@ public class NormalMode extends Activity {
                                 }
                                 if (currentfinger == Finger.Four) {
 
-                                    if (sensorr0 < 2.5) {
+                                    if (sensorr0 > 2.5) {
                                         wrongFinger1();
                                     }
-                                    if (sensorr1 < 2.5) {
+                                    if (sensorr1 > 2.5) {
                                         wrongFinger2();
                                     }
-                                    if (sensorr2 < 2.5) {
+                                    if (sensorr2 > 2.5) {
                                         wrongFinger3();
                                     }
-                                    if (sensorr3 < 2.5) {
+                                    if (sensorr3 > 2.5) {
                                         score++;
                                         drawAnFinger();
                                     }
@@ -328,6 +328,7 @@ public class NormalMode extends Activity {
                 i2.setVisibility(View.INVISIBLE);
                 i3.setVisibility(View.INVISIBLE);
                 i4.setVisibility(View.INVISIBLE);
+                i5.setVisibility(View.INVISIBLE);
                 YoYo.with(Techniques.Shake)
                         .duration(1000)
                         .playOn(findViewById(R.id.i1));
@@ -340,6 +341,7 @@ public class NormalMode extends Activity {
                 i2.setVisibility(View.VISIBLE);
                 i3.setVisibility(View.INVISIBLE);
                 i4.setVisibility(View.INVISIBLE);
+                i6.setVisibility(View.INVISIBLE);
                 YoYo.with(Techniques.Shake)
                         .duration(1000)
                         .playOn(findViewById(R.id.i2));
@@ -353,6 +355,7 @@ public class NormalMode extends Activity {
                 i2.setVisibility(View.INVISIBLE);
                 i3.setVisibility(View.VISIBLE);
                 i4.setVisibility(View.INVISIBLE);
+                i7.setVisibility(View.INVISIBLE);
                 YoYo.with(Techniques.Shake)
                         .duration(1000)
                         .playOn(findViewById(R.id.i3));
@@ -365,6 +368,7 @@ public class NormalMode extends Activity {
                 i2.setVisibility(View.INVISIBLE);
                 i3.setVisibility(View.INVISIBLE);
                 i4.setVisibility(View.VISIBLE);
+                i8.setVisibility(View.INVISIBLE);
                 YoYo.with(Techniques.Shake)
                         .duration(1000)
                         .playOn(findViewById(R.id.i4));
@@ -409,7 +413,7 @@ public class NormalMode extends Activity {
         YoYo.with(Techniques.DropOut)
                 .duration(700)
                 .playOn(findViewById(R.id.i5));
-        i1.setImageResource(R.drawable.button1);
+//        i1.setImageResource(R.drawable.button1);
         false_counter++;
     }
 
@@ -419,7 +423,7 @@ public class NormalMode extends Activity {
         YoYo.with(Techniques.DropOut)
                 .duration(700)
                 .playOn(findViewById(R.id.i6));
-        i2.setImageResource(R.drawable.button6);
+//        i2.setImageResource(R.drawable.button6);
         false_counter++;
     }
 
@@ -429,7 +433,7 @@ public class NormalMode extends Activity {
         YoYo.with(Techniques.DropOut)
                 .duration(700)
                 .playOn(findViewById(R.id.i7));
-        i3.setImageResource(R.drawable.button6);
+//        i3.setImageResource(R.drawable.button6);
         false_counter++;
     }
 
@@ -439,7 +443,7 @@ public class NormalMode extends Activity {
         YoYo.with(Techniques.DropOut)
                 .duration(700)
                 .playOn(findViewById(R.id.i8));
-        i4.setImageResource(R.drawable.button6);
+        //       i4.setImageResource(R.drawable.button6);
         false_counter++;
     }
 

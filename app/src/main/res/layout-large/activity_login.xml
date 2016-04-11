@@ -9,13 +9,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp">
+        android:layout_marginTop="300dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username" />
+            android:text="Username"
+            android:textSize="25dp" />
 
         <EditText
             android:id="@+id/username"
@@ -23,7 +24,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:maxLength="10" />
+            android:maxLength="10"
+            android:textSize="25dp" />
 
     </LinearLayout>
 
@@ -36,7 +38,8 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password" />
+            android:text="Password"
+            android:textSize="25dp" />
 
 
         <EditText
@@ -44,28 +47,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textSize="25dp" />
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:background="#6AECD1"
         android:text="Login"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:background="#6AECD1"
         android:text="Register"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
 
 </LinearLayout>

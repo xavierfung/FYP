@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fyp.xavier.smarttherapy.Add_Record_Test;
+import com.fyp.xavier.smarttherapy.FunMode;
+import com.fyp.xavier.smarttherapy.NormalMode;
 import com.fyp.xavier.smarttherapy.helper.BTConnetion;
 import com.fyp.xavier.smarttherapy.ProgramSelect;
 import com.fyp.xavier.smarttherapy.R;
@@ -67,13 +69,20 @@ public class MainActivity extends Activity {
         twplace.setText(username);
 
         // Logout button click event
-        /**  btnLogout.setOnClickListener(new View.OnClickListener() {
+        image_login.setOnClickListener(new View.OnClickListener() {
 
         @Override public void onClick(View v) {
         logoutUser();
         }
         });
-         **/
+        tw_login.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                logoutUser();
+            }
+        });
+
         iButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,10 +105,10 @@ public class MainActivity extends Activity {
             }
         });
 
-        /**   image_setting.setOnClickListener(new View.OnClickListener() {
+        image_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
+                Intent intent = new Intent(getApplicationContext(), FunMode.class);
                 ;
                 startActivity(intent);
             }
@@ -108,11 +117,11 @@ public class MainActivity extends Activity {
         tw_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), BTConnetion.class);
+                Intent intent = new Intent(getApplicationContext(), FunMode.class);
                 startActivity(intent);
             }
         });
-         **/
+
         image_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

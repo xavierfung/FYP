@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/counter_box"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="000"
+        android:textSize="50dp" />
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="480dp"
+        android:layout_height="360dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/i1"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@drawable/button1" />
+
+            <ImageView
+                android:id="@+id/i5"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignBottom="@id/i1"
+                android:layout_alignLeft="@id/i1"
+                android:layout_alignRight="@id/i1"
+                android:layout_alignTop="@id/i1"
+                android:background="@drawable/button6" />
+
+            <TextView
+                android:id="@+id/it1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i1"
+                android:layout_alignLeft="@id/i1"
+                android:layout_alignRight="@id/i1"
+                android:layout_alignTop="@id/i1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#000079"
+                android:textSize="100sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/i2"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@drawable/button2" />
+
+            <ImageView
+                android:id="@+id/i6"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignBottom="@id/i2"
+                android:layout_alignLeft="@id/i2"
+                android:layout_alignRight="@id/i2"
+                android:layout_alignTop="@id/i2"
+                android:background="@drawable/button6" />
+
+            <TextView
+                android:id="@+id/it2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i2"
+                android:layout_alignLeft="@id/i2"
+                android:layout_alignRight="@id/i2"
+                android:layout_alignTop="@id/i2"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#5B4B00"
+                android:textSize="100sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="fill_parent">
+
+
+            <ImageView
+                android:id="@+id/i3"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@drawable/button3" />
+
+            <ImageView
+                android:id="@+id/i7"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignBottom="@id/i3"
+                android:layout_alignLeft="@id/i3"
+                android:layout_alignRight="@id/i3"
+                android:layout_alignTop="@id/i3"
+                android:background="@drawable/button6" />
+
+            <TextView
+                android:id="@+id/it3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i3"
+                android:layout_alignLeft="@id/i3"
+                android:layout_alignRight="@id/i3"
+                android:layout_alignTop="@id/i3"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#006030"
+                android:textSize="100sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/i4"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@drawable/button4" />
+
+            <ImageView
+                android:id="@+id/i8"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignBottom="@id/i4"
+                android:layout_alignLeft="@id/i4"
+                android:layout_alignRight="@id/i4"
+                android:layout_alignTop="@id/i4"
+                android:background="@drawable/button6" />
+
+            <TextView
+                android:id="@+id/it4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/i4"
+                android:layout_alignLeft="@id/i4"
+                android:layout_alignRight="@id/i4"
+                android:layout_alignTop="@id/i4"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="#2F0000"
+                android:textSize="100sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:background="#6AECD1"
+        android:text="Start"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="#6AECD1"
+        android:text="Stop"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fsr_value4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Sensor4" />
+
+        <TextView
+            android:id="@+id/fsr_value3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value4"
+            android:layout_toStartOf="@+id/fsr_value4"
+            android:text="Sensor3" />
+
+        <TextView
+            android:id="@+id/fsr_value2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value3"
+            android:layout_toStartOf="@+id/fsr_value3"
+            android:text="Sensor2" />
+
+        <TextView
+            android:id="@+id/fsr_value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fsr_value2"
+            android:layout_toStartOf="@+id/fsr_value2"
+            android:text="Sensor1" />
+
+        <TextView
+            android:id="@+id/txtString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fsr_value4"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="New Text" />
+
+        <TextView
+            android:id="@+id/txtStringLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtString"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="New Text" />
+
+    </RelativeLayout>
+</LinearLayout>
